@@ -11,6 +11,9 @@ type StringService interface {
 	Count(string) int
 }
 
+//ServiceMiddleware is a middleware that can be inserted in the pipeline to modify StringService behavior
+type ServiceMiddleware func(StringService) StringService
+
 //SimpleStringService an idiotic implementation of StringService
 type SimpleStringService struct{}
 
